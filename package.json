@@ -1,0 +1,43 @@
+{
+  "name": "plugin-ractive",
+  "version": "1.0.0",
+  "description": "Ractive.js plugin for SystemJS",
+  "main": "dist/ract.cjs.js",
+  "jsnext:main": "dist/ract.es6.js",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:es6",
+    "build:cjs": "rollup -c -f cjs -o dist/ract.cjs.js",
+    "build:es6": "rollup -c -f es6 -o dist/ract.es6.js",
+    "prepublish": "rm -rf dist && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cprecioso/plugin-ractive.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Carlos Precioso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cprecioso/plugin-ractive/issues"
+  },
+  "homepage": "https://github.com/cprecioso/plugin-ractive#readme",
+  "peerDependencies": {
+    "ractive": "*"
+  },
+  "dependencies": {
+    "rcu": "^0.7.0",
+    "rcu-builders": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "ractive": "^0.7.3",
+    "rcu": "^0.7.0",
+    "rcu-builders": "^0.5.0",
+    "rollup": "^0.25.8",
+    "rollup-plugin-babel": "^2.4.0"
+  }
+}
